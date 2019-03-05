@@ -32,6 +32,7 @@ using namespace GameL;
 
 
 
+
 //イニシャライズ
 void CObjHero::Init()
 {
