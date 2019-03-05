@@ -124,8 +124,10 @@
     <ClCompile Include="GameL\UserData.cpp" />
     <ClCompile Include="GameL\WICTextureLoader.cpp" />
     <ClCompile Include="GameL\WinInputs.cpp" />
+    <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjStageChoice.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
+    <ClCompile Include="SceneEarth.cpp" />
     <ClCompile Include="SceneStageChoice.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="ObjHero.cpp" />
@@ -147,8 +149,10 @@
     <ClInclude Include="GameL\WICTextureLoader.h" />
     <ClInclude Include="GameL\WinInputs.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjStageChoice.h" />
     <ClInclude Include="ObjTitle.h" />
+    <ClInclude Include="SceneEarth.h" />
     <ClInclude Include="SceneStageChoice.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="ObjHero.h" />
