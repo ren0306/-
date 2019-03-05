@@ -31,10 +31,15 @@ CSceneStageChoice::~CSceneStageChoice()
 //ゲームタイトル初期化メソッド
 void CSceneStageChoice::InitScene()
 {
-	Draw::LoadImage(L"HeroTouka.png", 1, TEX_SIZE_512);
+	Draw::LoadImageW(L"HeroTouka.png", 1, TEX_SIZE_512);
+
 	//ステージ選択オブジェクト作成
-	CObjStageChoice* obj = new CObjStageChoice();
-	Objs::InsertObj(obj, OBJ_STAGECHOICE, 10);
+	CObjStageChoice* o = new CObjStageChoice();
+	Objs::InsertObj(o, OBJ_STAGECHOICE, 10);
+
+
+	CObjHero* obj = new CObjHero();
+	Objs::InsertObj(obj, OBJ_HERO, 10);
 
 }
 

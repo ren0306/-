@@ -9,6 +9,9 @@ enum OBJ_NAME
 	OBJ_TITLE,
 	OBJ_STAGECHOICE,
 	OBJ_HERO,
+	OBJ_BLOCK,
+
+	OBJ_STAGECHOICE,
 	OBJ_BEAMSABER,
 };
 //------------------------------------------------
@@ -54,6 +57,9 @@ struct UserData
 
 //ゲームシーンオブジェクトヘッダ------------------
 #include "ObjHero.h"
+
+#include "ObjBlock.h"
+
 #include "ObjTitle.h"
 #include "ObjStageChoice.h"
 #include "ObjBeamSaber.h"
@@ -61,12 +67,13 @@ struct UserData
 
 //ゲームシーンクラスヘッダ------------------------
 #include "SceneMain.h"
+#include "SceneEarth.h"
+
 #include "SceneTitle.h"
 #include "SceneStageChoice.h"
 //-----------------------------------------------
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-//#define SET_GAME_START  CSceneTitle
-#define SET_GAME_START  CSceneMain
+#define SET_GAME_START  CSceneEarth
 //-----------------------------------------------
