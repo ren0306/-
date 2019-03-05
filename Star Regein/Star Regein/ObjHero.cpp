@@ -30,9 +30,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-
-
-
 //イニシャライズ
 void CObjHero::Init()
 {
