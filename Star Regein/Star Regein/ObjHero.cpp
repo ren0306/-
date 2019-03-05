@@ -8,27 +8,9 @@
 #include "GameHead.h"
 #include "ObjHero.h"
 
-//初期位置
-#define POTISION_X 100
-#define POTISION_Y 100
-
-//アニメーション用
-#define ANITIME 1
-
-//ダッシュ速度
-#define DASH_SPEED 5.0
-//通常速度
-#define NORMAL_SPEED 3.0
-
-//主人公の向き
-#define POS_UP 1    //上
-#define POS_DOWN 2  //下
-#define POS_LEFT 3  //左
-#define POS_RIGHT 4 //右
-
-
 //使用するネームスペース
 using namespace GameL;
+
 
 
 //イニシャライズ
@@ -43,6 +25,8 @@ void CObjHero::Init()
 
 	m_ani_time = 0;
 	m_ani_frame = 1;
+
+	
 }
 
 //アクション
@@ -87,6 +71,13 @@ void CObjHero::Action()
 		m_ani_time += ANITIME;
 	}
 
+	if (Input::GetVKey('Z'))
+	{
+		//ビームサーベルオブジェクト作成
+		CObjBeamSaber* objb = new CObjBeamSaber(m_px + 14, m_py + 50);
+		Objs::InsertObj(objb, OBJ_BEAMSABER, 2);
+	}
+
 
 	//アニメーション用
 	if (m_ani_time > 4)
@@ -98,6 +89,24 @@ void CObjHero::Action()
 	if (m_ani_frame == 4)
 	{
 		m_ani_frame = 0;
+	}
+
+	//画面外に出ないようにする処理
+	if (m_px + 64.0f > 800.0f)
+	{
+		m_px = 800.0f - 64.0f;
+	}
+	else if (m_py + 64.0f > 600.0f)
+	{
+		m_py = 600.0f - 64.0f;
+	}
+	else if (m_px < 0.0f)
+	{
+		m_px = 0.0f;
+	}
+	else if (m_py < 0.0f)
+	{
+		m_py = 0.0f;
 	}
 
 

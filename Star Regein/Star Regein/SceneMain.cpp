@@ -33,6 +33,8 @@ void CSceneMain::InitScene()
 	//グラフィック読み込み
 	Draw::LoadImageW(L"HeroTouka.png", 1, TEX_SIZE_512);
 
+	Draw::LoadImageW(L"ビームサーベル.png", 2, TEX_SIZE_512);
+
 	//主人公オブジェクト作成
 	CObjHero* obj = new CObjHero();
 	Objs::InsertObj(obj, OBJ_HERO, 1);
