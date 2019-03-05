@@ -51,7 +51,7 @@ void CObjTitle::Draw()
 	//ゲーム開始
 	if (m_start == true)
 	{
-		;
+		Scene::SetScene(new CSceneStageChoice());
 	}
 	//ゲーム終了
 	if (m_end == true)
@@ -74,6 +74,7 @@ void CObjTitle::Draw()
 	{
 		Font::StrDraw(L"ゲームスタート", 280, 300, 32, c);
 		Font::StrDraw(L"→ゲーム終了", 280, 340, 32, c);
+		//Zキーで終わる
 		if (Input::GetVKey('Z') == true)
 		{
 			m_end = true;
