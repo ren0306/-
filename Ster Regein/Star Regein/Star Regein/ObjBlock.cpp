@@ -33,10 +33,10 @@ void CObjBlock::Init()
 				Objs::InsertObj(cow, OBJ_COW, 10);
 			}
 
-		}
-	}
-
-	//主人公出現
+//アクション
+void CObjBlock::Action()
+{
+	//出現
 	for (int i = 0; i < MAPSIZE; i++)
 	{
 		for (int j = 0; j < MAPSIZE; j++)
