@@ -11,10 +11,14 @@
 //初期位置
 #define POTISION_X 100
 #define POTISION_Y 100
-//移動量
-#define SPEEDPOWER 2.0
+
 //アニメーション用
 #define ANITIME 1
+
+//ダッシュ速度
+#define DASH_SPEED 5.0
+//通常速度
+#define NORMAL_SPEED 3.0
 
 //主人公の向き
 #define POS_UP 1    //上
@@ -49,33 +53,43 @@ void CObjHero::Action()
 	m_vx = 0.0f;
 	m_vy = 0.0f;
 
+	//Shiftキーが入力されたらダッシュ
+	if ((Input::GetVKey(VK_SHIFT)))
+	{
+		m_speed_power = DASH_SPEED;
+	}
+	else//通常速度
+	{
+		m_speed_power = NORMAL_SPEED;
+	}
+
 	if (Input::GetVKey(VK_UP))//矢印キー（上）が入力されたとき
 	{
-		m_vy -= SPEEDPOWER;
+		m_vy -= m_speed_power;
 		m_posture = POS_UP;
 		m_ani_time += ANITIME;
 	}
 	else if (Input::GetVKey(VK_DOWN))//矢印キー（下）が入力されたとき
 	{
-		m_vy += SPEEDPOWER;
+		m_vy += m_speed_power;
 		m_posture = POS_DOWN;
 		m_ani_time += ANITIME;
 	}
 	else if (Input::GetVKey(VK_LEFT))//矢印キー（左）が入力されたとき
 	{
-		m_vx -= SPEEDPOWER;
+		m_vx -= m_speed_power;
 		m_posture = POS_LEFT;
 		m_ani_time += ANITIME;
 	}
 	else if (Input::GetVKey(VK_RIGHT))//矢印キー（右）が入力されたとき
 	{
-		m_vx += SPEEDPOWER;
+		m_vx += m_speed_power;
 		m_posture = POS_RIGHT;
 		m_ani_time += ANITIME;
 	}
 
 
-		//アニメーション用
+	//アニメーション用
 	if (m_ani_time > 4)
 	{
 		m_ani_frame += 1;

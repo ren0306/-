@@ -28,6 +28,8 @@ private:
 	float m_vy;
 	float m_posture; //姿勢
 
+	float m_speed_power; //スピードパワー
+
 	int m_ani_time; //アニメーションフレーム動作間隔
 	int m_ani_frame;//描画フレーム
 
