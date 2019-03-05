@@ -18,6 +18,12 @@ using namespace GameL;
 //イニシャライズ
 void CObjTitle::Init()
 {
+	m_up=false;
+	m_down=false;
+	m_start=false;
+	m_end=false;
+
+
 }
 
 //アクション
@@ -29,30 +35,54 @@ void CObjTitle::Action()
 void CObjTitle::Draw()
 {
 	float c[4] = { 1,1,1,1 };
-	flag flag = {5,5,5};
+	//上キーを押したとき
 	if (Input::GetVKey(VK_UP) == true)
 	{
-		flag.m_up = true;
-		flag.m_down = false;
+		m_up = true;
+		m_down = false;
+
 	}
+	//下キーを押したとき
 	if (Input::GetVKey(VK_DOWN) == true)
 	{
-		flag.m_down = true;
-		flag.m_up = false;
+		m_down = true;
+		m_up = false;
 	}
-
-	if (flag.m_up == true)
+	//ゲーム開始
+	if (m_start == true)
+	{
+		Scene::SetScene(new CSceneStageChoice());
+	}
+	//ゲーム終了
+	if (m_end == true)
+	{
+		exit(4);
+	}
+	//カーソルが動く
+	if (m_up == true)
 	{
 		Font::StrDraw(L"→ゲームスタート", 280, 300, 32, c);
 		Font::StrDraw(L"ゲーム終了", 280, 340, 32, c);
+		//Ｚキーで始める
+		if (Input::GetVKey('Z') == true)
+		{
+			m_start = true;
+		}
 
 	}
-	else if (flag.m_down == true)
+	else if (m_down == true)
 	{
 		Font::StrDraw(L"ゲームスタート", 280, 300, 32, c);
 		Font::StrDraw(L"→ゲーム終了", 280, 340, 32, c);
+		//Zキーで終わる
+		if (Input::GetVKey('Z') == true)
+		{
+			m_end = true;
+		}
+
 
 	}
+	//始めはこの状態
 	else
 	{
 		Font::StrDraw(L"ゲームスタート", 280, 300, 32, c);

@@ -5,17 +5,17 @@
 using namespace GameL;
 
 //オブジェクト：タイトル
-class CObjTitle :public CObj
+class CObjStageChoice :public CObj
 {
 public:
-	CObjTitle() {};
-	~CObjTitle() {};
+	CObjStageChoice() {};
+	~CObjStageChoice() {};
 	void Init();		//イニシャライズ
 	void Action();		//アクション
 	void Draw();		//ドロー
 private:
-	bool m_up;
-	bool m_down;
+	bool m_right;
+	bool m_left;
 	bool m_start;
 	bool m_end;
 
