@@ -10,6 +10,7 @@ enum OBJ_NAME
 	OBJ_STAGECHOICE,
 	OBJ_HERO,
 	OBJ_BLOCK,
+	OBJ_COW,
 
 	OBJ_BEAMSABER,
 };
@@ -62,6 +63,7 @@ struct UserData
 #include "ObjTitle.h"
 #include "ObjStageChoice.h"
 #include "ObjBeamSaber.h"
+#include "ObjCow.h"
 //------------------------------------------------
 
 //ゲームシーンクラスヘッダ------------------------
