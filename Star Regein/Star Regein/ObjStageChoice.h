@@ -14,9 +14,5 @@ public:
 	void Action();		//アクション
 	void Draw();		//ドロー
 private:
-	bool m_right;
-	bool m_left;
-	bool m_start;
-	bool m_end;
-
+	
 };
