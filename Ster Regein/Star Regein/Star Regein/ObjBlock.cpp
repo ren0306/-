@@ -32,10 +32,9 @@ void CObjBlock::Init()
 				CObjCow* cow = new CObjCow(j*MAPSIZE, i*MAPSIZE);
 				Objs::InsertObj(cow, OBJ_COW, 10);
 			}
+		}
+	}
 
-//アクション
-void CObjBlock::Action()
-{
 	//出現
 	for (int i = 0; i < MAPSIZE; i++)
 	{

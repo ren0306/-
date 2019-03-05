@@ -1,0 +1,6 @@
+﻿  ObjCow.cpp
+c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objcow.cpp(55): warning C4244: '引数': 'time_t' から 'unsigned int' への変換です。データが失われる可能性があります。
+c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objcow.cpp(170): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objcow.cpp(171): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+  Star Regein.vcxproj -> C:\Users\GA1\Desktop\恐れすぎた幽鬼\Star Regein\x64\Debug\Star Regein.exe
+  Star Regein.vcxproj -> C:\Users\GA1\Desktop\恐れすぎた幽鬼\Star Regein\x64\Debug\Star Regein.pdb (Partial PDB)

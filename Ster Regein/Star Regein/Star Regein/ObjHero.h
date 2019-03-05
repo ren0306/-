@@ -49,7 +49,7 @@ private:
 
 	int m_f;//UŒ‚§Œä—p
 
-	int m_time = 0;
+	int m_time;
 
 
 };
