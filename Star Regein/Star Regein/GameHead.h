@@ -11,7 +11,6 @@ enum OBJ_NAME
 	OBJ_HERO,
 	OBJ_BLOCK,
 
-	
 	OBJ_BEAMSABER,
 };
 //------------------------------------------------
