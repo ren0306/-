@@ -26,7 +26,6 @@ void CObjBlock::Init()
 //アクション
 void CObjBlock::Action()
 {
-	
 	//出現
 	for (int i = 0; i < MAPSIZE; i++)
 	{
