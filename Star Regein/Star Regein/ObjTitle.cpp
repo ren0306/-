@@ -11,6 +11,7 @@
 //使用するネームスペース
 using namespace GameL;
 
+int g_Count=0;
 
 //イニシャライズ
 void CObjTitle::Init()
@@ -26,6 +27,7 @@ void CObjTitle::Init()
 //アクション
 void CObjTitle::Action()
 {
+
 }
 
 //ドロー

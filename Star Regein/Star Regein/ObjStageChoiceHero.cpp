@@ -133,5 +133,5 @@ void CObjStageChoiceHero::Draw()
 	dst.m_bottom = 64.0f + m_py;
 
 	//•\Ž¦
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	Draw::Draw(3, &src, &dst, c, 0.0f);
 }

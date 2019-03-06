@@ -19,7 +19,7 @@ using namespace GameL;
 //コンストラクタ
 CSceneStageChoice::CSceneStageChoice()
 {
-
+	g_Count = 1;
 }
 
 //デストラクタ
@@ -32,18 +32,18 @@ CSceneStageChoice::~CSceneStageChoice()
 void CSceneStageChoice::InitScene()
 {
 	//画像読み込み--------------------------------------
-	Draw::LoadImageW(L"SpaceBack.png", 1, TEX_SIZE_512);
-	Draw::LoadImageW(L"HeroTouka.png", 2, TEX_SIZE_512);
+	Draw::LoadImageW(L"ステージ選択.png", 2, TEX_SIZE_2048);
+	Draw::LoadImageW(L"HeroTouka.png", 3, TEX_SIZE_512);
 	//--------------------------------------------------
 
 	
 
 	//ステージ選択オブジェクト作成----------------------------
 	CObjStageChoice* o = new CObjStageChoice();
-	Objs::InsertObj(o, OBJ_STAGECHOICE, 10);
+	Objs::InsertObj(o, OBJ_STAGECHOICE, 100);
 	//--------------------------------------------------------
 	//ステージ選択用ヒーローオブジェクト作成------------------
-	CObjStageChoiceHero* oh = new CObjStageChoiceHero(32,32);
+	CObjStageChoiceHero* oh = new CObjStageChoiceHero(0, 500);
 	Objs::InsertObj(oh, OBJ_STAGECHOICEHERO, 10);
 	//--------------------------------------------------------
 	//背景オブジェクト作成←タイトルの背景から持ってきたやつ--
