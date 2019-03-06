@@ -28,7 +28,13 @@ void CObjHero::Init()
 	m_ani_time = 0;
 	m_ani_frame = 1;
 
-	
+	//blockとの衝突状態確認
+	m_hit_up    = false;
+	m_hit_down  = false;
+	m_hit_left  = false;
+	m_hit_right = false;
+
+	m_block_type = 0;		//踏んでいるblockの種類を確認用
 }
 
 //アクション
@@ -77,7 +83,6 @@ void CObjHero::Action()
 		m_ani_frame = 0;	//静止フレームにする
 		m_ani_time = 0;		//アニメーション時間リセット
 	}
-
 	if (Input::GetVKey('Z'))
 	{
 		//ビームサーベルオブジェクト作成
@@ -98,11 +103,13 @@ void CObjHero::Action()
 		m_ani_frame = 0;
 	}
 
-	//スクロール
-	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
-	m_px = 375;
-	m_py = 275;
 
+	//ブロックとの当たり判定実行
+	CObjBlock* pb = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
+	pb->BlockHit(&m_px, &m_py, true,
+		&m_hit_up, &m_hit_down, &m_hit_left, &m_hit_right, &m_vx, &m_vy,
+		&m_block_type
+	);
 
 	//位置の更新
 	m_px += m_vx;
@@ -124,7 +131,7 @@ void CObjHero::Draw()
 	RECT_F src; //描画元切り取り位置
 	RECT_F dst; //描画先表示位置
 
-				//ブロック情報を持ってくる
+	//ブロック情報を持ってくる
 	CObjBlock*block = (CObjBlock*)Objs::GetObj(OBJ_BLOCK);
 
 	//切り取り位置の設定

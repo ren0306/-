@@ -33,8 +33,7 @@ void CSceneEarth::InitScene()
 	//外部データ読み込み（ステージ情報）
 	unique_ptr<wchar_t> p;	//ステージ情報ポインター
 	int size;				//ステージ情報の大きさ
-	//p = Save::ExternalDataOpen(L"Earth.csv", &size);//外部データ読み込み
-	p = Save::ExternalDataOpen(L"test.csv", &size);//外部データ読み込み
+	p = Save::ExternalDataOpen(L"Earth.csv", &size);//外部データ読み込み
 
 	int map[29][29];
 	int count = 1;
@@ -56,10 +55,12 @@ void CSceneEarth::InitScene()
 
 	//グラフィック読み込み
 	Draw::LoadImageW(L"HeroTouka.png", 1, TEX_SIZE_512);
-	Draw::LoadImageW(L"SpaceBack.jpg", 2, TEX_SIZE_1024);
+	Draw::LoadImageW(L"ビームサーベル.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"牛.png", 3, TEX_SIZE_512);
+	Draw::LoadImageW(L"隕石.png", 4, TEX_SIZE_64);
 
-
+	Draw::LoadImageW(L"SpaceBack.png", 5, TEX_SIZE_1024);
+	
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 1);

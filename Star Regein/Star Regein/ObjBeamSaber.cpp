@@ -11,7 +11,6 @@
 //使用するネームスペース
 using namespace GameL;
 
-
 //コンストラクタ
 CObjBeamSaber::CObjBeamSaber(float x, float y)
 {
@@ -50,16 +49,16 @@ void CObjBeamSaber::Draw()
 	RECT_F dst; //描画先表示位置
 
 	//切り取り位置の設定
-	src.m_top = 0.0f;
-	src.m_left = 0.0f;
-	src.m_right = 32.0f;
+	src.m_top    = 0.0f;
+	src.m_left   = 0.0f;
+	src.m_right  = 32.0f;
 	src.m_bottom = 64.0f;
 
 	
 	//表示位置の設定
-	dst.m_top = 0.0f+m_y;
-	dst.m_left = 0.0f+m_x;
-	dst.m_right = 32.0f+m_x;
+	dst.m_top    = 0.0f+m_y;
+	dst.m_left   = 0.0f+m_x;
+	dst.m_right  = 32.0f+m_x;
 	dst.m_bottom = 32.0f+m_y;
 
 	//表示
