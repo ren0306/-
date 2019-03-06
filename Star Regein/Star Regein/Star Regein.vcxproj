@@ -126,7 +126,6 @@
     <ClCompile Include="GameL\WinInputs.cpp" />
     <ClCompile Include="ObjBlock.cpp" />
     <ClCompile Include="ObjBeamSaber.cpp" />
-    <ClCompile Include="ObjCow.cpp" />
     <ClCompile Include="ObjStageChoice.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneEarth.cpp" />
@@ -134,7 +133,6 @@
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="ObjHero.cpp" />
     <ClCompile Include="SceneMain.cpp" />
-    <ClCompile Include="UtilityModule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameHead.h" />
@@ -154,7 +152,6 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="ObjBlock.h" />
     <ClInclude Include="ObjBeamSaber.h" />
-    <ClInclude Include="ObjCow.h" />
     <ClInclude Include="ObjStageChoice.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneEarth.h" />
@@ -162,7 +159,6 @@
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="ObjHero.h" />
     <ClInclude Include="SceneMain.h" />
-    <ClInclude Include="UtilityModule.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GameL\DirectXTex.inl" />

@@ -37,6 +37,10 @@ void CSceneStageChoice::InitScene()
 	CObjStageChoice* o = new CObjStageChoice();
 	Objs::InsertObj(o, OBJ_STAGECHOICE, 10);
 
+
+	CObjHero* obj = new CObjHero();
+	Objs::InsertObj(obj, OBJ_HERO, 10);
+
 }
 
 //ゲームタイトル実行中メソッド
