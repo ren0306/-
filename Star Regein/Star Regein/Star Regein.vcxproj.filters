@@ -25,34 +25,7 @@
     <ClCompile Include="GameL\MultiThread.cpp">
       <Filter>リソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="ObjBeamSaber.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjBlock.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjHero.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjStageChoice.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="ObjTitle.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneEarth.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SceneMain.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="GameL\SceneManager.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneStageChoice.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SceneTitle.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
     <ClCompile Include="GameL\SetWindow.cpp">
@@ -82,8 +55,41 @@
     <ClCompile Include="ObjMessage.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjTitle.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneTitle.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjTitleBack.cpp">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBlock.cpp">
+      <Filter>ソースファイル\地球\マップ情報</Filter>
+    </ClCompile>
     <ClCompile Include="ObjMiniMap.cpp">
-      <Filter>ソースファイル</Filter>
+      <Filter>ソースファイル\地球\マップ情報</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjHero.cpp">
+      <Filter>ソースファイル\主人公関係</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjBeamSaber.cpp">
+      <Filter>ソースファイル\主人公関係</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneEarth.cpp">
+      <Filter>ソースファイル\地球</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SceneManager.cpp">
+      <Filter>リソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStageChoice.cpp">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStageChoice.cpp">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjStageChoiceHero.cpp">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,34 +120,7 @@
     <ClInclude Include="GameL\MultiThread.h">
       <Filter>リソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="ObjBeamSaber.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjBlock.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjHero.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjStageChoice.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="ObjTitle.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneEarth.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SceneMain.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="GameL\SceneManager.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneStageChoice.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneTitle.h">
       <Filter>ソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="GameL\SetWindow.h">
@@ -171,8 +150,41 @@
     <ClInclude Include="ObjMessage.h">
       <Filter>ソースファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ObjTitle.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTitle.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTitleBack.h">
+      <Filter>ソースファイル\タイトル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBlock.h">
+      <Filter>ソースファイル\地球\マップ情報</Filter>
+    </ClInclude>
     <ClInclude Include="ObjMiniMap.h">
-      <Filter>ソースファイル</Filter>
+      <Filter>ソースファイル\地球\マップ情報</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjHero.h">
+      <Filter>ソースファイル\主人公関係</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjBeamSaber.h">
+      <Filter>ソースファイル\主人公関係</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneEarth.h">
+      <Filter>ソースファイル\地球</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SceneManager.h">
+      <Filter>リソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStageChoice.h">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageChoice.h">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjStageChoiceHero.h">
+      <Filter>ソースファイル\ステージ選択画面</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +202,21 @@
     </Filter>
     <Filter Include="ソースファイル\敵\牛">
       <UniqueIdentifier>{b085b3c8-f0bf-4e57-b704-b420c2603a0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\タイトル">
+      <UniqueIdentifier>{4b91114e-a6c8-40a3-99d0-b3b53a21bc2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\地球">
+      <UniqueIdentifier>{44b00725-fde3-4be5-988a-f77d9af2eaaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\地球\マップ情報">
+      <UniqueIdentifier>{2671bc79-c52f-490d-bfcd-d0650eacd071}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\主人公関係">
+      <UniqueIdentifier>{5b73aaa1-6e92-426e-9b53-567e74c82a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\ステージ選択画面">
+      <UniqueIdentifier>{ca25aede-7d18-40ec-a780-7bc0b613aa64}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

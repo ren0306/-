@@ -7,12 +7,14 @@ enum OBJ_NAME
 	//ゲームで使うオブジェクトの名前
 	//OBJ_○○と表記
 	OBJ_TITLE,
+	OBJ_TITLEBACK,
 	OBJ_STAGECHOICE,
 	OBJ_MESSAGE,
 	
 	OBJ_MINIMAP,
 
 	OBJ_HERO,
+	OBJ_STAGECHOICEHERO,
 	OBJ_BLOCK,
 	OBJ_STAR,
 
@@ -65,11 +67,13 @@ extern int g_StarCount;	//星を数える変数
 
 //ゲームシーンオブジェクトヘッダ------------------
 #include "ObjHero.h"
+#include "ObjStageChoiceHero.h"
 
 #include "ObjBlock.h"
 #include "ObjStar.h"
 
 #include "ObjTitle.h"
+#include "ObjTitleBack.h"
 #include "ObjStageChoice.h"
 #include "ObjMessage.h"
 #include "ObjMiniMap.h"
@@ -88,5 +92,5 @@ extern int g_StarCount;	//星を数える変数
 
 //シーンスタートクラス---------------------------
 //ゲーム開始時のシーンクラス登録
-#define SET_GAME_START  CSceneEarth
+#define SET_GAME_START  CSceneTitle
 //-----------------------------------------------
