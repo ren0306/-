@@ -11,6 +11,8 @@
 //使用するネームスペース
 using namespace GameL;
 
+int g_StarCount = 0;	//星を数える変数の初期化
+
 //使用ヘッダー
 #include "SceneEarth.h"
 #include "GameHead.h"
@@ -18,7 +20,8 @@ using namespace GameL;
 //コンストラクタ
 CSceneEarth::CSceneEarth()
 {
-
+	m_memory = 0;	//星の数を計る変数の初期化
+	m_time = 0;		//メッセージ時間用の変数の初期化
 }
 
 //デストラクタ
@@ -37,9 +40,9 @@ void CSceneEarth::InitScene()
 
 	int map[29][29];
 	int count = 1;
-	for (int i = 0; i < 29; i++)
+	for (int i = 0; i < MAPSIZE; i++)
 	{
-		for (int j = 0; j < 29; j++)
+		for (int j = 0; j < MAPSIZE; j++)
 		{
 			int w = 0;
 			swscanf_s(&p.get()[count], L"%d", &w);
@@ -58,8 +61,9 @@ void CSceneEarth::InitScene()
 	Draw::LoadImageW(L"ビームサーベル.png", 2, TEX_SIZE_512);
 	Draw::LoadImageW(L"牛.png", 3, TEX_SIZE_512);
 	Draw::LoadImageW(L"隕石.png", 4, TEX_SIZE_64);
-
 	Draw::LoadImageW(L"SpaceBack.png", 5, TEX_SIZE_1024);
+	Draw::LoadImageW(L"星.png", 6, TEX_SIZE_1024);
+
 	
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);
@@ -71,5 +75,20 @@ void CSceneEarth::InitScene()
 //実行中メソッド
 void CSceneEarth::Scene()
 {
-
+	//テスト（地球で星を5個集めたら次へ移行）
+	if (g_StarCount == 5)
+	{
+		Scene::SetScene(new CSceneMain());	//ゲームメインシーンに移行
+	}
+	//星のカウントが増えた場合
+	if (g_StarCount > m_memory)	
+	{
+		m_time++;	//timeをプラスしている時だけメッセージを表示
+		swprintf_s(STAR, L"%d個目の星を取得、残り%d個！",g_StarCount,5 - g_StarCount);
+		Font::StrDraw(STAR, 0, 0, 25, c);//HPを表示
+		if (m_time == 100) {
+			m_memory = g_StarCount;	//現在の星の数を代入
+			m_time = 0;	//timeの初期化
+		}
+	}
 }

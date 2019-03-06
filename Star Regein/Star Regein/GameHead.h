@@ -10,6 +10,8 @@ enum OBJ_NAME
 	OBJ_STAGECHOICE,
 	OBJ_HERO,
 	OBJ_BLOCK,
+	OBJ_STAR,
+
 	OBJ_COW,
 
 	OBJ_BEAMSABER,
@@ -32,6 +34,8 @@ enum HIT_ELEMENTS
 	ELEMENT_BLUE,
 	ELEMENT_BLACK,
 	ELEMENT_WHITE,
+
+	ELEMENT_STAR,
 };
 //------------------------------------------------
 
@@ -46,7 +50,7 @@ struct UserData
 
 
 //ゲーム内で使用されるグローバル変数・定数・列挙--
-
+extern int g_StarCount;	//星を数える変数
 
 
 //------------------------------------------------
@@ -59,6 +63,7 @@ struct UserData
 #include "ObjHero.h"
 
 #include "ObjBlock.h"
+#include "ObjStar.h"
 
 #include "ObjTitle.h"
 #include "ObjStageChoice.h"

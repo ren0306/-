@@ -43,13 +43,19 @@ void CObjBlock::Init()
 			if (m_map[i][j] == 3)
 			{
 				//主人公オブジェクト作成
-				CObjHero* obj = new CObjHero(j*MAPSIZE, i*MAPSIZE);//オブジェクト作成
+				CObjHero* obj = new CObjHero(j*64.0f, i*64.0f);//オブジェクト作成
 				Objs::InsertObj(obj, OBJ_HERO, 10);//マネージャに登録
 
 				m_scrollx = -j * MAPSIZE;
 				m_scrolly = -i * MAPSIZE;
 
-				return;
+			}
+			if (m_map[i][j] == 2)
+			{
+				//星オブジェクト作成
+				CObjStar* objstar = new CObjStar(j*64.0f, i*64.0f);//オブジェクト作成
+				Objs::InsertObj(objstar, OBJ_STAR, 9);//マネージャに登録
+
 			}
 		}
 	}
@@ -116,8 +122,8 @@ void CObjBlock::Draw()
 					//切り取り位置の設定
 					src.m_top    = 0.0f;
 					src.m_left   = 0.0f;
-					src.m_right  = 64.0f;
-					src.m_bottom = 64.0f;
+					src.m_right  = 258.0f;
+					src.m_bottom = 220.0f;
 					//描画
 					Draw::Draw(4, &src, &dst, c, 0.0f);
 				}
@@ -166,7 +172,7 @@ void CObjBlock::BlockHit
 	{
 		for (int j = 0; j < MAPSIZE; j++)
 		{
-			if (m_map[i][j] == 1)
+			if (m_map[i][j] == 1 || m_map[i][j] == 99)
 			{
 				//要素番号を座標に変更
 				float bx = j*64.0f;
@@ -225,7 +231,6 @@ void CObjBlock::BlockHit
 							*up = true;//オブジェクトの上の部分が衝突している
 							*y = by + 64.0f + (scrolly);//ブロックの位置+オブジェクトの幅							
 							*vy = 0.15f;
-
 						}
 					}
 				}

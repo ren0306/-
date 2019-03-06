@@ -35,6 +35,9 @@ void CObjHero::Init()
 	m_hit_right = false;
 
 	m_block_type = 0;		//踏んでいるblockの種類を確認用
+
+	//当たり判定用のHitBoxを作成
+	Hits::SetHitBox(this, 392, 277, 31, 64, ELEMENT_PLAYER, OBJ_HERO, 1);
 }
 
 //アクション

@@ -128,6 +128,7 @@
     <ClCompile Include="ObjBeamSaber.cpp" />
     <ClCompile Include="ObjCow.cpp" />
     <ClCompile Include="ObjStageChoice.cpp" />
+    <ClCompile Include="ObjStar.cpp" />
     <ClCompile Include="ObjTitle.cpp" />
     <ClCompile Include="SceneEarth.cpp" />
     <ClCompile Include="SceneStageChoice.cpp" />
@@ -156,6 +157,7 @@
     <ClInclude Include="ObjBeamSaber.h" />
     <ClInclude Include="ObjCow.h" />
     <ClInclude Include="ObjStageChoice.h" />
+    <ClInclude Include="ObjStar.h" />
     <ClInclude Include="ObjTitle.h" />
     <ClInclude Include="SceneEarth.h" />
     <ClInclude Include="SceneStageChoice.h" />

@@ -8,9 +8,6 @@
 #include "GameHead.h"
 #include "ObjTitle.h"
 
-
-
-
 //使用するネームスペース
 using namespace GameL;
 
