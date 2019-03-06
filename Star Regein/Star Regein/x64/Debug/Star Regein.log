@@ -7,15 +7,15 @@
   ObjTitle.cpp
   ObjStageChoice.cpp
   ObjCow.cpp
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objcow.cpp(55): warning C4244: '引数': 'time_t' から 'unsigned int' への変換です。データが失われる可能性があります。
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objcow.cpp(170): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objcow.cpp(171): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\objcow.cpp(55): warning C4244: '引数': 'time_t' から 'unsigned int' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\objcow.cpp(170): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\objcow.cpp(171): warning C4244: '+=': 'double' から 'float' への変換です。データが失われる可能性があります。
   ObjBeamSaber.cpp
   ObjBlock.cpp
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objblock.cpp(32): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objblock.cpp(46): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objblock.cpp(49): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objblock.cpp(50): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\objblock.cpp(32): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\objblock.cpp(46): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\objblock.cpp(49): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\objblock.cpp(50): warning C4244: '=': 'int' から 'float' への変換です。データが失われる可能性があります。
   WinInputs.cpp
   WICTextureLoader.cpp
   UserData.cpp
@@ -32,8 +32,9 @@ c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\objblock.cpp(
   Draw2DTex_Source.cpp
   DirectXDevice.cpp
   Audio.cpp
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\gamel\audio.cpp(347): warning C4267: '初期化中': 'size_t' から 'unsigned int' に変換しました。データが失われているかもしれません。
-c:\users\ga1\desktop\恐れすぎた幽鬼\star regein\star regein\gamel\audio.cpp(347): warning C4267: '初期化中': 'size_t' から 'const unsigned int' に変換しました。データが失われているかもしれません。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\gamel\audio.cpp(347): warning C4267: '初期化中': 'size_t' から 'unsigned int' に変換しました。データが失われているかもしれません。
+c:\users\student\desktop\新しいフォルダー\star regein\star regein\gamel\audio.cpp(347): warning C4267: '初期化中': 'size_t' から 'const unsigned int' に変換しました。データが失われているかもしれません。
   コードを生成中...
-  Star Regein.vcxproj -> C:\Users\GA1\Desktop\恐れすぎた幽鬼\Star Regein\x64\Debug\Star Regein.exe
-  Star Regein.vcxproj -> C:\Users\GA1\Desktop\恐れすぎた幽鬼\Star Regein\x64\Debug\Star Regein.pdb (Partial PDB)
+  LINK : 前回のインクリメンタル リンクで C:\Users\student\Desktop\新しいフォルダー\Star Regein\x64\Debug\Star Regein.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+  Star Regein.vcxproj -> C:\Users\student\Desktop\新しいフォルダー\Star Regein\x64\Debug\Star Regein.exe
+  Star Regein.vcxproj -> C:\Users\student\Desktop\新しいフォルダー\Star Regein\x64\Debug\Star Regein.pdb (Partial PDB)
