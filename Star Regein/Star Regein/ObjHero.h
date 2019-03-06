@@ -6,9 +6,6 @@
 using namespace GameL;
 
 //-------定数------------------------
-//初期位置
-#define POTISION_X 100
-#define POTISION_Y 100
 
 //アニメーション用
 #define ANITIME 1
@@ -18,18 +15,12 @@ using namespace GameL;
 //通常速度
 #define NORMAL_SPEED 3.0
 
-//主人公の向き
-#define POS_UP 1    //上
-#define POS_DOWN 2  //下
-#define POS_LEFT 3  //左
-#define POS_RIGHT 4 //右
-
 //-------------------------------------
 //オブジェクト:主人公
 class CObjHero :public CObj
 {
 public:
-	CObjHero() {};
+	CObjHero(float x, float y) ;
 	~CObjHero() {};
 	void Init();    //イニシャライズ
 	void Action();  //アクション
@@ -37,9 +28,12 @@ public:
 
 	float GetX() { return m_px; }
 	float GetY() { return m_py; }
+	float GetVY() { return m_vy; }
+	float GetVX() { return m_vx; }
 	void SetX(float x) { m_px = x; }
 	void SetY(float y) { m_py = y; }
 	void SetVY(float vy) { m_vy = vy; }
+	void SetVX(float vx) { m_vx = vx; }
 
 private:
 	float m_px;  //位置
@@ -55,7 +49,7 @@ private:
 
 	int m_f;//攻撃制御用
 
-	int m_time = 0;
+	int m_time;
 
 
 };
