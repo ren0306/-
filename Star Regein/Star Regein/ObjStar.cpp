@@ -37,7 +37,6 @@ void CObjStar::Action()
 		hit->SetInvincibility(true);	//触れられなくする
 		m_GetStar = true;			//取得した際、色を変える為にフラグをオンにする
 		g_StarCount++;				//現在取得している星の数をカウントする
-
 	}
 
 	//ブロック情報を持ってくる

@@ -20,8 +20,6 @@ int g_StarCount = 0;	//星を数える変数の初期化
 //コンストラクタ
 CSceneEarth::CSceneEarth()
 {
-	m_memory = 0;	//星の数を計る変数の初期化
-	m_time = 0;		//メッセージ時間用の変数の初期化
 }
 
 //デストラクタ
@@ -63,12 +61,20 @@ void CSceneEarth::InitScene()
 	Draw::LoadImageW(L"隕石.png", 4, TEX_SIZE_64);
 	Draw::LoadImageW(L"SpaceBack.png", 5, TEX_SIZE_1024);
 	Draw::LoadImageW(L"星.png", 6, TEX_SIZE_1024);
+	Draw::LoadImageW(L"Background.png", 7, TEX_SIZE_2048);
 
 	
 	//blockオブジェクト作成
 	CObjBlock* objb = new CObjBlock(map);
 	Objs::InsertObj(objb, OBJ_BLOCK, 1);
+	
+	//MiniMapオブジェクト作成
+	CObjMiniMap* objminimap = new CObjMiniMap(map);
+	Objs::InsertObj(objminimap, OBJ_MINIMAP, 5);
 
+	//メッセージオブジェクト作成
+	CObjMessage* objmes = new CObjMessage();
+	Objs::InsertObj(objmes, OBJ_MESSAGE, 120);
 }
 
 
@@ -80,15 +86,5 @@ void CSceneEarth::Scene()
 	{
 		Scene::SetScene(new CSceneMain());	//ゲームメインシーンに移行
 	}
-	//星のカウントが増えた場合
-	if (g_StarCount > m_memory)	
-	{
-		m_time++;	//timeをプラスしている時だけメッセージを表示
-		swprintf_s(STAR, L"%d個目の星を取得、残り%d個！",g_StarCount,5 - g_StarCount);
-		Font::StrDraw(STAR, 0, 0, 25, c);//HPを表示
-		if (m_time == 100) {
-			m_memory = g_StarCount;	//現在の星の数を代入
-			m_time = 0;	//timeの初期化
-		}
-	}
+	
 }

@@ -8,6 +8,10 @@ enum OBJ_NAME
 	//OBJ_››‚Æ•\‹L
 	OBJ_TITLE,
 	OBJ_STAGECHOICE,
+	OBJ_MESSAGE,
+	
+	OBJ_MINIMAP,
+
 	OBJ_HERO,
 	OBJ_BLOCK,
 	OBJ_STAR,
@@ -67,6 +71,9 @@ extern int g_StarCount;	//¯‚ğ”‚¦‚é•Ï”
 
 #include "ObjTitle.h"
 #include "ObjStageChoice.h"
+#include "ObjMessage.h"
+#include "ObjMiniMap.h"
+
 #include "ObjBeamSaber.h"
 #include "ObjCow.h"
 //------------------------------------------------

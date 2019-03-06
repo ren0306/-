@@ -79,6 +79,12 @@
     <ClCompile Include="ObjStar.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
+    <ClCompile Include="ObjMessage.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjMiniMap.cpp">
+      <Filter>ソースファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameL\Audio.h">
@@ -160,6 +166,12 @@
       <Filter>リソースファイル</Filter>
     </ClInclude>
     <ClInclude Include="ObjStar.h">
+      <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMessage.h">
+      <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjMiniMap.h">
       <Filter>ソースファイル</Filter>
     </ClInclude>
   </ItemGroup>
