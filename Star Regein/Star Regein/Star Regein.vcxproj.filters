@@ -49,9 +49,6 @@
     <ClCompile Include="GameL\SceneManager.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameL\SceneObjManager.cpp">
-      <Filter>ソースファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SceneStageChoice.cpp">
       <Filter>ソースファイル</Filter>
     </ClCompile>
@@ -75,6 +72,9 @@
     </ClCompile>
     <ClCompile Include="UtilityModule.cpp">
       <Filter>ソースファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="GameL\SceneObjManager.cpp">
+      <Filter>リソースファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -129,9 +129,6 @@
     <ClInclude Include="GameL\SceneManager.h">
       <Filter>ソースファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameL\SceneObjManager.h">
-      <Filter>ソースファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SceneStageChoice.h">
       <Filter>ソースファイル</Filter>
     </ClInclude>
@@ -155,6 +152,9 @@
     </ClInclude>
     <ClInclude Include="UtilityModule.h">
       <Filter>ソースファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="GameL\SceneObjManager.h">
+      <Filter>リソースファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

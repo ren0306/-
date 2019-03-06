@@ -22,18 +22,18 @@ void CObjBlock::Init()
 {
 
 	//敵出現
-	for (int i = 0; i < MAPSIZE; i++)
-	{
-		for (int j = 0; j < MAPSIZE; j++)
-		{
-			if (m_map[i][j] == 5)
-			{
-				//牛オブジェクト作成
-				CObjCow* cow = new CObjCow(j*MAPSIZE, i*MAPSIZE);
-				Objs::InsertObj(cow, OBJ_COW, 10);
-			}
-		}
-	}
+	//for (int i = 0; i < MAPSIZE; i++)
+	//{
+	//	for (int j = 0; j < MAPSIZE; j++)
+	//	{
+	//		if (m_map[i][j] == 5)
+	//		{
+	//			//牛オブジェクト作成
+	//			CObjCow* cow = new CObjCow(j*MAPSIZE, i*MAPSIZE);
+	//			Objs::InsertObj(cow, OBJ_COW, 10);
+	//		}
+	//	}
+	//}
 
 	//出現
 	for (int i = 0; i < MAPSIZE; i++)
@@ -46,8 +46,8 @@ void CObjBlock::Init()
 				CObjHero* obj = new CObjHero(j*MAPSIZE, i*MAPSIZE);//オブジェクト作成
 				Objs::InsertObj(obj, OBJ_HERO, 10);//マネージャに登録
 
-				m_scrollx = -j * MAPSIZE + 400;
-				m_scrolly = -i * MAPSIZE + 300;
+				m_scrollx = -j * MAPSIZE;
+				m_scrolly = -i * MAPSIZE;
 
 				return;
 			}
@@ -70,6 +70,8 @@ void CObjBlock::Action()
 
 	hero->SetY(275);
 	m_scrolly -= hero->GetVY() * 4;
+
+
 }
 
 //ドロー
@@ -81,10 +83,11 @@ void CObjBlock::Draw()
 	RECT_F src;	//描画元切り取り位置
 	RECT_F dst;	//描画先表示位置
 
+	/* 背景用 */
 	//切り取り位置の設定
-	src.m_top	 = 0.0f;
-	src.m_left	 = 0.0f;
-	src.m_right	 = 800.0f;
+	src.m_top    = 0.0f;
+	src.m_left   = 0.0f;
+	src.m_right  = 800.0f;
 	src.m_bottom = 600.0f;
 
 	//表示位置の設定
@@ -94,10 +97,42 @@ void CObjBlock::Draw()
 	dst.m_bottom = 600.0f;
 
 	//描画
-	Draw::Draw(2, &src, &dst, c, 0.0f);
+	Draw::Draw(5, &src, &dst, c, 0.0f);
+
+	/* ブロック（障害物用） */
+	for (int i = 0; i < MAPSIZE; i++)
+	{
+		for (int j = 0; j < MAPSIZE; j++)
+		{
+			if (m_map[i][j] >= 0)
+			{
+				//表示位置の設定
+				dst.m_top    = i*64.0f + m_scrolly;
+				dst.m_left   = j*64.0f + m_scrollx;
+				dst.m_right  = dst.m_left + 64.0f;
+				dst.m_bottom = dst.m_top  + 64.0f;
+				if (m_map[i][j] == 1)
+				{
+					//切り取り位置の設定
+					src.m_top    = 0.0f;
+					src.m_left   = 0.0f;
+					src.m_right  = 64.0f;
+					src.m_bottom = 64.0f;
+					//描画
+					Draw::Draw(4, &src, &dst, c, 0.0f);
+				}
+				else
+				{
+
+				}
+			}
+		}
+	}
+
+	
 }
 
-//BlockHit変数
+//BlockHit関数
 //引数１　float* x			：判定を行うobjectのX位置
 //引数２　float* y			：判定を行うobjectのY位置
 //引数３　bool  scroll		：判定を行うobjectはスクロールの影響与えるかどうか（true=与える、false=与えない）
@@ -110,7 +145,7 @@ void CObjBlock::Draw()
 //引数10　int* bt			：下部分判定時、特殊なブロックのタイプを返す
 //判定を行うobjectとブロック50*50限定で、当たり判定と上下左右判定を行う
 //その結果は引数４～10に返す
-void CObjBlock::blockHit
+void CObjBlock::BlockHit
 (
 	float *x, float *y, bool scroll_on,
 	bool*up, bool* down, bool*left, bool*right,
@@ -127,22 +162,22 @@ void CObjBlock::blockHit
 	*bt = 0;
 
 	//m_mapの全要素にアクセス
-	for (int i = 0; i < 56; i++)
+	for (int i = 0; i < MAPSIZE; i++)
 	{
-		for (int j = 0; j < 56; j++)
+		for (int j = 0; j < MAPSIZE; j++)
 		{
 			if (m_map[i][j] == 1)
 			{
 				//要素番号を座標に変更
-				float bx = j*50.0f;
-				float by = i*50.0f;
+				float bx = j*64.0f;
+				float by = i*64.0f;
 
 				//スクロールの影響
 				float scrollx = scroll_on ? m_scrollx : 0;
 				float scrolly = scroll_on ? m_scrolly : 0;
 
 				//オブジェクトとブロックの当たり判定
-				if ((*x + (-scrollx) + 50.0f > bx) && (*x + (-scrollx) < bx + 50.0f) && (*y + (-scrolly) + 50.0f > by) && (*y + (-scrolly) < by + 50.0f))
+				if ((*x + (-scrollx) + 64.0f > bx) && (*x + (-scrollx) < bx + 64.0f) && (*y + (-scrolly) + 64.0f > by) && (*y + (-scrolly) < by + 64.0f))
 				{
 					//上下左右判定
 
@@ -169,27 +204,27 @@ void CObjBlock::blockHit
 						if ((r < 45 && r >= 0) || r > 315)
 						{
 							*right = true;//オブジェクトの左部分が衝突している
-							*x = bx + 50.0f + (scrollx);//ブロックの位置+オブジェクトの幅
-							*vx = 0.5f;//-VX*反発係数
+							*x = bx + 64.0f + (scrollx);//ブロックの位置+オブジェクトの幅
+							*vx = 0.15f;//-VX*反発係数
 						}
 
 						if (r > 45 && r < 135)
 						{
 							*down = true;//オブジェクトの下の部分が衝突している
-							*y = by - 50.0f + (scrolly);//ブロックの位置-オブジェクトの幅
-							*vy = -0.5f;
+							*y = by - 64.0f + (scrolly);//ブロックの位置-オブジェクトの幅
+							*vy = -0.15f;
 						}
 						if (r > 135 && r < 225)
 						{
 							*left = true;//オブジェクトの右部分が衝突している
-							*x = bx - 50.0f + (scrollx);//ブロックの位置-オブジェクトの幅
-							*vx = -0.5f;//-VX*反発係数
+							*x = bx - 64.0f + (scrollx);//ブロックの位置-オブジェクトの幅
+							*vx = -0.15f;//-VX*反発係数
 						}
 						if (r > 225 && r < 315)
 						{
 							*up = true;//オブジェクトの上の部分が衝突している
-							*y = by + 50.0f + (scrolly);//ブロックの位置+オブジェクトの幅							
-							*vy = 0.5f;
+							*y = by + 64.0f + (scrolly);//ブロックの位置+オブジェクトの幅							
+							*vy = 0.15f;
 
 						}
 					}

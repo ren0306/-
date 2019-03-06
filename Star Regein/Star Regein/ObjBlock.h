@@ -28,10 +28,9 @@ class CObjBlock : public CObj
 		float GetScrolly() { return m_scrolly; }
 
 		//ƒuƒƒbƒN‚Æ‚Ì“–‚½‚è”»’è
-		void blockHit(
+		void BlockHit(
 			float *x, float *y, bool scroll_on,
 			bool*up, bool* down, bool*left, bool*right,
-
 			float*vx, float*vy, int*bt
 		);
 	private:
