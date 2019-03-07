@@ -21,6 +21,7 @@ using namespace GameL;
 void CObjStageChoice::Init()
 {
 	m_stage = false;
+	m_key_flag = true;
 }
 
 //アクション
@@ -32,16 +33,21 @@ void CObjStageChoice::Action()
 	CObjStageChoiceHero* hero = (CObjStageChoiceHero*)Objs::GetObj(OBJ_STAGECHOICEHERO);
 	float hx = hero->GetX();
 	float hy = hero->GetY();
-
-	//指定の場所でZキーでスタート
-	if (hx >= Earthx && hx <= Earthxx && hy >= Earthy&&hy <= Earthyy)
+	if (Input::GetVKey('Z') == true )
 	{
-		Font::StrDraw(L"Zキーでスタート", 280, 300, 10000, c);
-		if (Input::GetVKey('Z') == true)
+
+		if (hx >= Earthx && hx <= Earthxx && hy >= Earthy&&hy <= Earthyy&&m_key_flag==false)
 		{
+			Font::StrDraw(L"Zキーでスタート", 280, 300, 10000, c);
 			Scene::SetScene(new CSceneEarth());
 		}
+
 	}
+	else
+	{
+		m_key_flag = false;
+	}
+
 }
 
 //ドロー

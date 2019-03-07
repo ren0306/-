@@ -102,6 +102,24 @@ void CObjStageChoiceHero::Action()
 	//位置の更新
 	m_px += m_vx;
 	m_py += m_vy;
+
+	//主人公機が領域外行かない処理
+	if (m_px + 32.0f > 800.0f)
+	{
+		m_px = 800.0f - 32.0f;
+	}
+	if (m_py + 32.0f > 600.0f)
+	{
+		m_py = 600.0f - 32.0f;
+	}
+	if (m_py < 0.0f)
+	{
+		m_py = 0.0f;
+	}
+	if (m_px < 0.0f)
+	{
+		m_px = 0.0f;
+	}
 }
 
 //ドロー
